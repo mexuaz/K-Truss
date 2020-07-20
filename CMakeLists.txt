@@ -3,6 +3,7 @@ project(KT C)
 
 set(GKLIB_PATH "GKlib" CACHE PATH "path to GKlib")
 set(SHARED FALSE CACHE BOOL "build a shared library")
+set(OPENMP TRUE CACHE BOOL "build with openmp")
 
 if(MSVC)
   set(KT_INSTALL FALSE)
@@ -26,6 +27,7 @@ include_directories(${GKLIB_PATH})
 
 # Build
 add_executable(ktruss ${GKlib_sources} ${kt_sources})
+target_link_libraries(ktruss m)
 
 # Install
 if(KT_INSTALL)

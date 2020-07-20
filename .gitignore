@@ -1,4 +1,6 @@
-
 *.swp
 build/
-
+ktruss
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
